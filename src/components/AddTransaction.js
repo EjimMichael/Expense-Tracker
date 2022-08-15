@@ -1,6 +1,8 @@
-import React from "react";
+import { useState } from "react";
 
 function AddTransaction() {
+    const [text, setText] = useState('');
+    const [amount, setAmount] = useState(0);
   return (
     <div className="mt-6">
       <h3 className="font-medium">Add New Transaction</h3>
@@ -10,7 +12,13 @@ function AddTransaction() {
             Text{" "}
           </label>{" "}
           <br />
-          <input type="text" className="w-full mt-1" placeholder="Enter text" />
+          <input
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            className="w-full mt-1 outline-none"
+            placeholder="Enter text"
+          />
         </div>
 
         <div className="mt-2">
@@ -21,7 +29,9 @@ function AddTransaction() {
           <br />
           <input
             type="number"
-            className="w-full mt-1"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            className="w-full mt-1 outline-none"
             placeholder="Enter amount"
           />
         </div>
