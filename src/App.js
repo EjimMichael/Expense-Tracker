@@ -1,9 +1,11 @@
-import './App.css';
+import Header from './components/Header';
+import TotalBalance from './components/TotalBalance';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Expense Tracker</h1>
+    <div className="w-screen h-screen overflow-auto flex flex-col items-center justify-center bg-[#F5F7FB]">
+      <Header />
+      <TotalBalance />
     </div>
   );
 }
