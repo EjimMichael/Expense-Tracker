@@ -4,8 +4,8 @@ const initialTransac = {
     transactions : [
         { id: 1, text: 'Books', amount: -50 },
         { id: 2, text: 'Phones', amount: -700 },
-        { id: 2, text: 'Salary', amount: 2000 },
-        { id: 3, text : 'Incomes', amount: 100 },
+        { id: 3, text: 'Salary', amount: 2000 },
+        { id: 4, text : 'Incomes', amount: 100 },
     ]
 }
 
