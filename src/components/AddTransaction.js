@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
-
+import { v4 as uuidv4 } from 'uuid';
 
 function AddTransaction() {
   const { addTransaction } = useContext(GlobalContext);
@@ -10,7 +10,19 @@ function AddTransaction() {
 
     const handleSubmit = e => {
       e.preventDefault();
+
+      const newTransaction = {
+        id: uuidv4(),
+        text,
+        amount: +amount
+      }
+      addTransaction(newTransaction);
+      
+      setText("");
+      setAmount("");
+
     }
+    
   return (
     <div className="mt-6">
       <h3 className="font-medium">Add New Transaction</h3>
