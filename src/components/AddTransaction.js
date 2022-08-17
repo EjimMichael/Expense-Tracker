@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
+
 
 function AddTransaction() {
+  const { addTransaction } = useContext(GlobalContext);
+
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
+
+    const handleSubmit = e => {
+      e.preventDefault();
+    }
   return (
     <div className="mt-6">
       <h3 className="font-medium">Add New Transaction</h3>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="mt-3">
           <label className="font-medium" htmlFor="text">
             Text{" "}
