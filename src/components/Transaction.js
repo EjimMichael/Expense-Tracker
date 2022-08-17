@@ -1,6 +1,10 @@
-import React from 'react';
+import { useContext } from 'react';
+import { GlobalContext } from "../context/GlobalContext";
+
 
 function Transaction({ transaction }) {
+  const { deleteTransaction } = useContext(GlobalContext);
+
     const sign = transaction.amount < 0 ? '-' : '+';
 
   return (
@@ -17,7 +21,7 @@ function Transaction({ transaction }) {
           {sign}${Math.abs(transaction.amount)}
         </p>
       </li>
-      <button className="hidden group-hover:block text-red-700 font-medium pl-1 text-2xl">
+      <button onClick={() => deleteTransaction(transaction.id)} className="hidden group-hover:block text-red-700 font-medium pl-1 text-2xl">
         x
       </button>
     </div>
